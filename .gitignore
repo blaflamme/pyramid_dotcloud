@@ -1,0 +1,7 @@
+*.py[co]
+*.egg
+*.egg-info
+.DS_Store
+dist
+build
+.coverage
