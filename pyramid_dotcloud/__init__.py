@@ -12,23 +12,23 @@ class IDotCloudEnv(Interface):
 
 class DotCloudEnv(object):
     """DotCloud environment for Pyramid"""
-    def __init__(self):
-        if os.path.isfile(DOTCLOUD_FILE_PATH):
-            with open(DOTCLOUD_FILE_PATH) as f:
-                self.env = json.load(f)
-                for item in self.env:
-                    setattr(self, item, self.env[item])
+    def __init__(self, path=DOTCLOUD_FILE_PATH):
+        if os.path.isfile(path):
+            with open(path) as f:
+                env = json.load(f)
+                for item in env:
+                    setattr(self, item, env[item])
 
 
 def get_dotcloud_env(config):
-    return config.registry.getUtility(IDotCloudEnv)
+    return config.registry.queryUtility(IDotCloudEnv)
 
 
 def get_dotcloud_env_from_request(request):
     """Obtain a DotCloudEnv object previously registered via
     ``config.include('pyramid_dotcloud')``
     """
-    return request.registry.getUtility(IDotCloudEnv)
+    return request.registry.queryUtility(IDotCloudEnv)
 
 
 def includeme(config):
