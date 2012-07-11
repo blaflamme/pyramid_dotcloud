@@ -17,7 +17,7 @@ class DotCloudEnv(object):
             with open(DOTCLOUD_FILE_PATH) as f:
                 self.env = json.load(f)
                 for item in self.env:
-                    self.setattr(item, self.env[item])
+                    setattr(self, item, self.env[item])
 
 
 def get_dotcloud_env(config):
