@@ -27,6 +27,6 @@ setup(name='pyramid_dotcloud',
       zip_safe=False,
       test_suite='pyramid_dotcloud',
       install_requires=requires,
-      test_requires=['mock', 'unittest2'],
+      test_requires=['mock', 'nose', 'coverage'],
       paster_plugins=['pyramid'],
       )
