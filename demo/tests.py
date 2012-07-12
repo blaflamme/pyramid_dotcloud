@@ -16,7 +16,7 @@ class ViewTests(unittest.TestCase):
         request = testing.DummyRequest()
         request.dotcloud_env = mock.Mock()
         info = dotcloud_env_view(request)
-        assert info.body.startswith('<h2>DOTCLOUD ENV</h2>')
+        assert info.body.startswith('<html><body><h2>DOTCLOUD ENV</h2>')
 
     def test_main(self):
         from pyramid.router import Router

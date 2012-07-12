@@ -39,3 +39,4 @@ def includeme(config):
         'dotcloud_env',
         reify=True
         )
+    config.include('.panel')

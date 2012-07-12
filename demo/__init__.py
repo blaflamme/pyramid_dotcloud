@@ -5,7 +5,8 @@ from pyramid.response import Response
 
 def dotcloud_env_view(request):
     env = request.dotcloud_env
-    return Response('<h2>DOTCLOUD ENV</h2>{0}'.format(env.__dict__))
+    return Response('<html><body><h2>DOTCLOUD ENV</h2>{0}</body></html>'\
+        .format(env.__dict__))
 
 
 def main(global_config, **settings):
