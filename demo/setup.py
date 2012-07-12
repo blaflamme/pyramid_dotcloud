@@ -9,7 +9,11 @@ try:
 except IOError:
     README = CHANGES = ''
 
-install_requires = ['pyramid', 'waitress']
+install_requires = [
+    'pyramid',
+    'waitress',
+    'PasteScript'
+    ]
 
 setup(name='dotcloud_demo',
       version='0.0',

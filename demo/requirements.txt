@@ -5,6 +5,7 @@ PasteDeploy==1.5.0
 PasteScript==1.7.5
 WebOb==1.2
 pyramid==1.3.2
+pyramid_debugtoolbar==1.0.2
 -e git://github.com/blaflamme/pyramid_dotcloud.git#egg=pyramid_dotcloud
 repoze.lru==0.5
 translationstring==1.1
