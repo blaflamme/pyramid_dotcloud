@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 from pyramid_debugtoolbar.panels import DebugPanel
 
 _ = lambda x: x
@@ -20,10 +22,10 @@ class DotCloudDebugPanel(DebugPanel):
         return _('DotCloud')
 
     def content(self):
-        vars = {'env': self.request.dotcloud_env.__dict__}
+        env = [(k, v) for k, v in vars(self.request.dotcloud_env).iteritems()]
         return self.render(
             'pyramid_dotcloud:dotcloud.dbtmako',
-            vars,
+            {'env': sorted(env, key=itemgetter(0))},
             self.request
             )
 
